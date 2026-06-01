@@ -2,7 +2,7 @@
 
 module Types
   class QueryType < BaseObject
-    field :todos, [Types::TodoType], null: false
+    field :todos, [ Types::TodoType ], null: false
 
     def todos
       Todo.all
