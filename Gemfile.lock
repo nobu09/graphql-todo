@@ -81,7 +81,7 @@ GEM
     bigdecimal (4.1.2)
     bootsnap (1.23.0)
       msgpack (~> 1.2)
-    brakeman (8.0.4)
+    brakeman (8.0.5)
       racc
     builder (3.3.0)
     bundler-audit (0.9.3)
@@ -161,7 +161,7 @@ GEM
       drb (~> 2.0)
       prism (~> 1.5)
     msgpack (1.8.0)
-    net-imap (0.6.4)
+    net-imap (0.6.4.1)
       date
       net-protocol
     net-pop (0.1.2)
@@ -371,4 +371,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   2.6.9
+  4.0.14
