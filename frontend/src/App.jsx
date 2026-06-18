@@ -1,4 +1,5 @@
-import { useQuery, gql } from '@apollo/client'
+import { gql } from '@apollo/client'
+import { useQuery } from '@apollo/client/react'
 import './App.css'
 
 const GET_TODOS = gql`
@@ -19,7 +20,7 @@ function App() {
 
   return (
     <div>
-      <h>Todoリスト</h>
+      <h1>Todoリスト</h1>
       <ul>
         {data.todos.map((todo) => (
           <li key={todo.id}>
