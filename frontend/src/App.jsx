@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useQuery, gql } from '@apollo/client'
 import './App.css'
 
@@ -23,7 +22,9 @@ function App() {
       <h>Todoリスト</h>
       <ul>
         {data.todos.map((todo) => (
-          <li>todo.name</li>
+          <li key={todo.id}>
+            {todo.title} {todo.completed ? '✅' : '⬜' }
+          </li>
         ))}
       </ul>
     </div>
