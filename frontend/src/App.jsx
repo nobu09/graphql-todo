@@ -1,5 +1,6 @@
+import { useState } from 'react'
 import { gql } from '@apollo/client'
-import { useQuery } from '@apollo/client/react'
+import { useQuery, userMutation } from '@apollo/client/react'
 import './App.css'
 
 const GET_TODOS = gql`
@@ -12,7 +13,20 @@ const GET_TODOS = gql`
   }
 `
 
+const CREATE_TODO = gql`
+  mutation ($title: String!) {
+    createTodo(input: { title: $title }) {
+      todo {
+        id
+        title
+        completed
+      }
+    }
+  }
+`
+
 function App() {
+  const [title, setTitle] = useState('')
   const { loading, error, data } = useQuery(GET_TODOS)
 
   if (loading) return <p>読み込み中...</p>
