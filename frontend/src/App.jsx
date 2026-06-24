@@ -37,7 +37,7 @@ function App() {
 
   const handleAdd = () => {
     if (!title) return
-    createTodo({ variable: {title} })
+    createTodo({ variables: {title} })
     setTitle('')
   }
 
