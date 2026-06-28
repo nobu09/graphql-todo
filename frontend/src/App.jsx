@@ -25,10 +25,25 @@ const CREATE_TODO = gql`
   }
 `
 
+const UPDATE_TODO = gql`
+  mutation ($id: ID!, $completed: Boolean) {
+    updateTodo(input: { id: $id, completed: $completed }) {
+      todo {
+        id
+        title
+        completed
+      }
+    }
+  }
+`
+
 function App() {
   const [title, setTitle] = useState('')
   const { loading, error, data } = useQuery(GET_TODOS)
   const [createTodo] = useMutation(CREATE_TODO, {
+    refetchQueries: [GET_TODOS],
+  })
+  const [updateTodo] = useMutation(UPDATE_TODO, {
     refetchQueries: [GET_TODOS],
   })
 
